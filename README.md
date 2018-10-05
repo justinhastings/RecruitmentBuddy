@@ -1,4 +1,4 @@
-#Recruitment Buddy
+# Recruitment Buddy
 
 My program will be a text messaging app that helps facilitate a more personal recruitment process for students at Vanderbilt. The app will target some key issues students typically face during the recruiting process. These issue include finding peers to network with, gaining insights on the interview experience, and identifying people willing to help. Today many students use LinkedIn for building their network and reaching out to peers with similar interests, however, connections made through LinkedIn tend to be very inorganic. My app will try to address this problem by only having willing people opt-in to being a resource.
 
