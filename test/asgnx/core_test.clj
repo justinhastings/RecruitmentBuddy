@@ -50,48 +50,6 @@
             :args ["x" "y" "z" "somereallylongthing"]}
            (parsed-msg "foo x y z somereallylongthing")))))
 
-(deftest welcome-test
-  (testing "that welcome messages are correctly formatted"
-    (is (= "Welcome bob" (welcome {:cmd "welcome" :args ["bob"]})))
-    (is (= "Welcome bob" (welcome {:cmd "welcome" :args ["bob" "smith"]})))
-    (is (= "Welcome bob smith jr" (welcome {:cmd "welcome" :args ["bob smith jr"]})))))
-
-
-(deftest homepage-test
-  (testing "that the homepage is output correctly"
-    (is (= cs4278-brightspace (homepage {:cmd "homepage" :args []})))))
-
-
-(deftest format-hour-test
-  (testing "that 0-23 hour times are converted to am/pm correctly"
-    (is (= "1am" (format-hour 1)))
-    (is (= "1pm" (format-hour 13)))
-    (is (= "2pm" (format-hour 14)))
-    (is (= "12am" (format-hour 0)))
-    (is (= "12pm" (format-hour 12)))))
-
-
-(deftest formatted-hours-test
-  (testing "that the office hours data structure is correctly converted to a string"
-    (is (= "from 8am to 10am in the chairs outside of the Wondry"
-           (formatted-hours {:start 8 :end 10 :location "the chairs outside of the Wondry"})))
-    (is (= "from 4am to 2pm in the chairs outside of the Wondry"
-           (formatted-hours {:start 4 :end 14 :location "the chairs outside of the Wondry"})))
-    (is (= "from 2pm to 10pm in the chairs outside of the Wondry"
-           (formatted-hours {:start 14 :end 22 :location "the chairs outside of the Wondry"})))))
-
-
-(deftest office-hours-for-day-test
-  (testing "testing lookup of office hours on a specific day"
-    (is (= "from 8am to 10am in the chairs outside of the Wondry"
-           (office-hours {:cmd "office hours" :args ["thursday"]})))
-    (is (= "from 8am to 10am in the chairs outside of the Wondry"
-           (office-hours {:cmd "office hours" :args ["tuesday"]})))
-    (is (= "there are no office hours on that day"
-           (office-hours {:cmd "office" :args ["wednesday"]})))
-    (is (= "there are no office hours on that day"
-           (office-hours {:cmd "office" :args ["monday"]})))))
-
 
 (deftest create-router-test
   (testing "correct creation of a function to lookup a handler for a parsed message"
