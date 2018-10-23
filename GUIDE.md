@@ -12,13 +12,13 @@ It is important to note that not only does this app ask resources where they hav
 
 "hi" - Welcome message and list of commands to get started
 
-"ask-employees <company-name>" - Ask a question to all current employees of a company
+"ask-employees <company-name> ..." - Ask a question to all current employees of a company
 
 
-"ask-ex-employees <company-name>" - Ask a question to all prior employees of a company
+"ask-ex-employees <company-name> ..." - Ask a question to all prior employees of a company
 
 
-"ask-prior-candidates <company-name>" - Ask a question to all people who have interviewed at a company
+"ask-prior-candidates <company-name> ..." - Ask a question to all people who have interviewed at a company
 
 
 "employee <company-name>" - Register yourself as a current employee of a company
@@ -30,7 +30,7 @@ It is important to note that not only does this app ask resources where they hav
 "prior-candidate <company-name>" - Register yourself as someone who has interviewed at a company
 
 
-"answer <Type your answer here...>" - Answer most recent question of a user
+"answer ..." - Answer most recent question of a user
 
 "optout-<employee/ex-employee/prior-candidate> <company-name>" - Opt-out of being a resource for a company
   
