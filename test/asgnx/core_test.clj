@@ -196,7 +196,7 @@
                     system
                     "test-user"
                     "expert food"))))
-      (is (= "Asking 1 expert(s) for an answer to: \"what burger\""
+      (is (= "Asking 1 employee(s) for an answer to: \"what burger\""
              (<!! (handle-message
                     system
                     "test-user"
