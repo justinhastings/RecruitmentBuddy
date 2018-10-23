@@ -10,11 +10,11 @@ provider:
          - "s3:PutObject"
          - "s3:GetObject"
          - "s3:RemoveObject"
-       Resource: "arn:aws:s3:::cs4278-asgnx-state/*"
+       Resource: "arn:aws:s3:::cs4278-asgnx-state-justinhastings/*"
     -  Effect: "Allow"
        Action:
          - "s3:ListBucket"
-       Resource: "arn:aws:s3:::cs4278-asgnx-state"
+       Resource: "arn:aws:s3:::cs4278-asgnx-state-justinhastings"
 
   environmentSecrets:
     twiliosid: 'twilio-prod-account-sid'
@@ -25,7 +25,7 @@ resources:
     StateBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: cs4278-asgnx-state
+        BucketName: cs4278-asgnx-state-justinhastings
 
 functions:
   handle-msg:

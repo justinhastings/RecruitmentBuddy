@@ -252,8 +252,8 @@
 ;; See the integration test in See handle-message-test for the
 ;; expectations on how your code operates
 ;;
-(defn experts-register [experts topic id info]
-  (action-insert [experts topic id] info))
+(defn employees-register [employees topic id info]
+  (action-insert [employees topic id] info))
 
 ;; Asgn 3.
 ;;
@@ -271,11 +271,11 @@
 ;; See the integration test in See handle-message-test for the
 ;; expectations on how your code operates
 ;;
-(defn experts-unregister [experts topic id]
-  (action-remove [experts topic id]))
+(defn employees-unregister [employees topic id]
+  (action-remove [employees topic id]))
 
-(defn experts-question-msg [experts question-words]
-  (str "Asking " (count experts) " expert(s) for an answer to: \""
+(defn employees-question-msg [employees question-words]
+  (str "Asking " (count employees) " employee(s) for an answer to: \""
        (string/join " " question-words) "\""))
 
 ;; Asgn 3.
@@ -337,14 +337,14 @@
 ;; See the integration test in See handle-message-test for the
 ;; expectations on how your code operates
 ;;
-(defn ask-experts [experts {:keys [args user-id]}]
-  (if (empty? experts)
-    [[] "There are no experts on that topic."]
+(defn ask-employees [employees {:keys [args user-id]}]
+  (if (empty? employees)
+    [[] "There are no current employees from that company."]
     (if (empty? (rest args))
       [[] "You must ask a valid question."]
-      [(into [] (concat (action-inserts [:conversations] experts user-id)
-                        (action-send-msgs experts (string/join " " (rest args)))))
-       (experts-question-msg experts (rest args))])))
+      [(into [] (concat (action-inserts [:conversations] employees user-id)
+                        (action-send-msgs employees (string/join " " (rest args)))))
+       (employees-question-msg employees (rest args))])))
 
 
 ;; Asgn 3.
@@ -410,7 +410,7 @@
     (if (empty? conversation)
       [[] "You haven't been asked a question."]
       [(into [] (action-send-msgs [conversation] (string/join " " args)))
-       (str "Your answer was sent.")])))
+       (str "Your message was sent.")])))
 
 ;; Asgn 3.
 ;;
@@ -450,9 +450,9 @@
 ;; See the integration test in See handle-message-test for the
 ;; expectations on how your code operates
 ;;
-(defn add-expert [experts {:keys [args user-id]}]
-  (let [msg (str user-id " is now an expert on " (first args) ".")]
-    [[(experts-register :expert (first args) user-id {})] msg]))
+(defn add-employee [employees {:keys [args user-id]}]
+  (let [msg (str user-id " is an employee at " (first args) ".")]
+    [[(employees-register :employee (first args) user-id {})] msg]))
 
 ;; Don't edit!
 (defn stateless [f]
@@ -464,8 +464,8 @@
              "welcome"  (stateless welcome)
              "homepage" (stateless homepage)
              "office"   (stateless office-hours)
-             "expert" add-expert
-             "ask" ask-experts
+             "employee" add-employee
+             "ask" ask-employees
              "answer" answer-question})
 ;; Asgn 3.
 ;;
@@ -477,9 +477,9 @@
 
 
 ;; Don't edit!
-(defn experts-on-topic-query [state-mgr pmsg]
+(defn employees-on-topic-query [state-mgr pmsg]
   (let [[topic]  (:args pmsg)]
-    (list! state-mgr [:expert topic])))
+    (list! state-mgr [:employee topic])))
 
 
 ;; Don't edit!
@@ -490,8 +490,8 @@
 
 ;; Don't edit!
 (def queries
-  {"expert" experts-on-topic-query
-   "ask"    experts-on-topic-query
+  {"employee" employees-on-topic-query
+   "ask"    employees-on-topic-query
    "answer" conversations-for-user-query})
 
 
