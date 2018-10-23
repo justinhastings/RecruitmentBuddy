@@ -12,22 +12,22 @@ It is important to note that not only does this app ask resources where they hav
 
 "hi" - Welcome message and list of commands to get started
 
-"ask-employees <company-name> " - Ask a question to all current employees of a company
+"ask-employees company-name ..." - Ask a question to all current employees of a company
 
 
-"ask-ex-employees <company-name> " - Ask a question to all prior employees of a company
+"ask-ex-employees company-name ..." - Ask a question to all prior employees of a company
 
 
-"ask-prior-candidates <company-name> " - Ask a question to all people who have interviewed at a company
+"ask-prior-candidates company-name ..." - Ask a question to all people who have interviewed at a company
 
 
-"employee <company-name>" - Register yourself as a current employee of a company
+"employee company-name ..." - Register yourself as a current employee of a company
 
 
-"ex-employee <company-name>" - Register yourself as a prior employee of a company
+"ex-employee company-name ..." - Register yourself as a prior employee of a company
 
 
-"prior-candidate <company-name>" - Register yourself as someone who has interviewed at a company
+"prior-candidate company-name ..." - Register yourself as someone who has interviewed at a company
 
 
 "answer" - Answer most recent question of a user
