@@ -1,0 +1,18 @@
+;; shadow-cljs configuration
+{:lein true
+ ; :source-paths and :dependencies are now ignored in this file
+ ; configure them via project.clj
+
+ ; :source-paths
+ ; ["src"]
+ ;
+ ; :dependencies
+ ; [[proto-repl "0.3.1"]
+ ;  [cljsjs/aws-sdk-js "2.94.0-0"]]
+ ;
+ ; ; :nrepl {:port 11100}
+ ;
+ :builds
+ {:app {:target :node-script
+        :main      asgnx.lambda/node-repl
+        :output-to "out/demo-script/script.js"}}}
