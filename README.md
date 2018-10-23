@@ -29,6 +29,14 @@ Currently I look on LinkedIn and Doreways.
 
 I felt like it was frustrating and competitive. Thats pretty much it.
 
+# Requirements:
+
+Make the job search experience easier and more natural.
+
+# Development Approach:
+
+Allow users the ability to ask employees, previous employees, and people who have interviewed for their contact information and guidance.
+
 ## Question 2:
 
 Mostly through connections with professors and the Civil Engineering Department. Also LinkedIn.
