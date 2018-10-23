@@ -8,6 +8,8 @@ It is important to note that not only does this app ask resources where they hav
 
 # Commands
 
+"hi" - Welcome message and list of commands to get started
+
 "ask-employees <company-name>" - Ask a question to all current employees of a company
 
 
